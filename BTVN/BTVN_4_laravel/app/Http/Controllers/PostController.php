@@ -23,7 +23,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -31,7 +31,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|max:255',
+            'content' => 'required',
+        ]);
+
+        Post::create($request->all());
+        return redirect() -> route('home')->with('success', 'Bài viết mới đã được thêm thành công');
     }
 
     /**
@@ -47,7 +53,8 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $posts = Post::findOrFail($id);
+        return view('edit', compact('posts'));
     }
 
     /**
@@ -55,7 +62,14 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request -> validate([
+            'title' => 'required|max:255',
+            'content' => 'required',
+        ]);
+
+        $posts = Post::findOrFail($id);
+        $posts->update($request->only(['title','content']));
+        return redirect()->route('home')->with('success','Cập nhật thành công');
     }
 
     /**
@@ -63,6 +77,8 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $posts = Post::findOrFail($id);
+        $posts->delete();
+        return redirect()->route('home')->with('success','Đã xóa thành công bài viết');
     }
 }

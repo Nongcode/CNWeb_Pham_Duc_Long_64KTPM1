@@ -1,0 +1,102 @@
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f7fa;
+        margin: 0;
+        padding: 0 700px 0 700px;
+    }
+
+    .container {
+        width: 50%;
+        margin: 50px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    /* Kiểu dáng cho form */
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    input[type="text"],
+    textarea {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    textarea {
+        min-height: 100px;
+    }
+
+    input[type="text"]:focus,
+    textarea:focus {
+        border-color: #3498db;
+        outline: none;
+    }
+
+    button {
+        background-color: #3498db;
+        color: white;
+        font-size: 16px;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #2980b9;
+    }
+
+    a {
+        display: inline-block;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 16px;
+        color: #3498db;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    /* Kiểu dáng cho thông báo lỗi */
+    ul {
+        padding: 0;
+        margin: 20px 0;
+        list-style: none;
+        background-color: #f8d7da;
+        border: 1px solid #f5c6cb;
+        border-radius: 5px;
+        color: #721c24;
+        padding: 10px;
+    }
+
+    ul li {
+        margin: 5px 0;
+    }
+
+
